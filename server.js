@@ -10,6 +10,7 @@ var app = express();
 var PORT = 3000;
 
 // Sets up the Express app to handle data parsing
+app.set('PORT', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -25,19 +26,19 @@ var waitingList = [];
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "../tables.html"));
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 app.get("/reservation", function(req, res) {
-    res.sendFile(path.join(__dirname, "../reservation.html"));
+    res.sendFile(path.join(__dirname, "reservation.html"));
 });
 app.get("/reservation.js", function(req, res) {
-    res.sendFile(path.join(__dirname, "reservation.js"));
+    res.sendFile(path.join(__dirname, "js/reservation.js"));
 });
 app.get("/tables.js", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.js"));
+    res.sendFile(path.join(__dirname, "js/tables.js"));
 });
 // Search for tables - provides JSON
 app.get("/api/:tables?", function(req, res) {
