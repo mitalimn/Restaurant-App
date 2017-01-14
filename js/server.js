@@ -33,7 +33,12 @@ app.get("/tables", function(req, res) {
 app.get("/reservation", function(req, res) {
     res.sendFile(path.join(__dirname, "../reservation.html"));
 });
-
+app.get("/reservation.js", function(req, res) {
+    res.sendFile(path.join(__dirname, "reservation.js"));
+});
+app.get("/tables.js", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.js"));
+});
 // Search for tables - provides JSON
 app.get("/api/:tables?", function(req, res) {
     var chosen = req.params.tables;
@@ -75,7 +80,7 @@ app.get("/api/:waitingList?", function(req, res) {
 });
 
 // Create New Tables - takes in JSON input
-app.post("/api/new", function(req, res) {
+app.post("/api/newReservation", function(req, res) {
     if (tables.length <= 5) {
         // req.body hosts is equal to the JSON post sent from the user
         var newTable = req.body;
@@ -83,7 +88,7 @@ app.post("/api/new", function(req, res) {
         console.log(newTable);
 
         // We then add the json the user sent to the tables array
-        characters.push(newTable);
+        tables.push(newTable);
 
         // We then display the JSON to the users
         res.json(newTable);
@@ -94,7 +99,7 @@ app.post("/api/new", function(req, res) {
         console.log(newWaiting);
 
         // We then add the json the user sent to the tables array
-        characters.push(newWaiting);
+        waitingList.push(newWaiting);
 
         // We then display the JSON to the users
         res.json(newWaiting);
