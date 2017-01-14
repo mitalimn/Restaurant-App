@@ -1,0 +1,30 @@
+{
+  "name": "restaurant-app",
+  "version": "1.0.0",
+  "description": "This app uses Node, Express, and front-end HTML/ CSS/ JS.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aishaprograms/Restaurant-App.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Aisha Ahmad and Mitali Naik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aishaprograms/Restaurant-App/issues"
+  },
+  "homepage": "https://github.com/aishaprograms/Restaurant-App#readme"
+}
