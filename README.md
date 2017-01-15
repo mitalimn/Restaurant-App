@@ -37,5 +37,5 @@ Built With
 SublimeText
 Authors
 
-Aisha Ahmad - Aisha Ahmad
+Aisha Ahmad
 Mitali Naik
